@@ -1,0 +1,33 @@
+.mapContainer {
+    position: relative;
+    width: 480;
+    height: 780;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+
+.sidebarStyle {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    margin: 12px;
+    background-color: #404040;
+    color: #ffffff;
+    z-index: 1 !important;
+    padding: 6px;
+    font-weight: normal;
+    font-size: small;
+}
+
+.listItem {
+    padding: 1% 5%;
+}
+
+#centre-iss {
+    margin-left: 3%;
+    margin-top: 1%;
+}
