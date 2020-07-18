@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import Map from '../map/map'
 import Footer from '../footer/footer'
 import { Container, Row } from 'react-bootstrap';
+
+import './App.css';
 
 class App extends Component {
 
@@ -15,8 +17,9 @@ class App extends Component {
         <Container fluid style={{height: "300px", padding: "0px"}}>
           <div className="banner_image" >
             <div className="banner_overlay"></div>
-            <div>
-              <h1 className="header_text justify-content-md-center">Where is the ISS?</h1>
+            <div className="justify-content-md-center header_div"> 
+              <h1 className="header_text">Where is the ISS?</h1>
+              <p className="header_paragraph">Know where the International Space Station is.</p>
             </div>
           </div>
         </Container>

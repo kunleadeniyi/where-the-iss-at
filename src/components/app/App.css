@@ -68,10 +68,18 @@
   padding: 70px;
 }
 
+.header_div {
+  position: relative;
+  top: -60%; left: 6%;
+  
+}
+
 .header_text {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -100%);
   font-weight: 800;
+  color: white;
+}
+
+.header_paragraph {
+  font-weight: 400;
   color: white;
 }

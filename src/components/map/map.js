@@ -12,7 +12,7 @@ class Map extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            centerMap: false,    
+            centerMap: true,    
             lng: 5,
             lat: 34,
             zoom: 2,
@@ -43,7 +43,7 @@ class Map extends Component {
         zoom: this.state.zoom
         });
 
-        var marker = new mapboxgl.Marker()
+        var marker = new mapboxgl.Marker({element: this.marker})
             .setLngLat([12.550343, 55.665957])
             .addTo(map);
         
@@ -90,17 +90,25 @@ class Map extends Component {
             <Row>
                 <Col xs={12} md={8}>
                     <div ref={el => this.mapContainer = el} className="mapContainer" style={{ height: '480px', width: '100%' }}/>
+                    
+                    <div ref={el => this.marker = el} className='marker'></div>  
+
                     <div className='sidebarStyle'>
                         <div>Longitude: {this.state.lng.toFixed(2)} | Latitude: {this.state.lat.toFixed(2)} | Zoom: {this.state.zoom}</div>
                     </div>
-
-                    
                 </Col>
                 
                 <Col xs={12} md={4}>
                     
                     <Table striped hover size="sm">
                         <tbody>
+                            <tr>
+                                <td>
+                                    <label for="centre-iss">Centre ISS</label>
+                                    <input type="checkbox" id="centre-iss" name="centre-iss" onChange={this.handleChecked} checked={this.state.centerMap}/>
+                                </td>
+                                <td> </td>
+                            </tr>
                             {
                             this.state.satelliteParams.map((parameter) => (
                                 (typeof parameter[1] !== 'number') 
@@ -108,12 +116,6 @@ class Map extends Component {
                                 : <tr><td>{parameter[0]}</td> <td>{parameter[1].toFixed(2)}</td></tr>
                             ))
                             }
-                            <tr>
-                                <td>
-                                    <label for="centre-iss">Centre ISS</label>
-                                    <input type="checkbox" id="centre-iss" name="centre-iss" onChange={ this.handleChecked } />
-                                </td>
-                            </tr>
                         </tbody>
                     </Table>
                 </Col>
